@@ -1,0 +1,36 @@
+{
+  "name": "course-registration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Course registration app: React SPA, Koa JSON API, SQLite",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch server/index.js",
+    "dev:web": "vite client",
+    "seed": "node server/seed.js",
+    "build": "vite build",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/server"
+    ]
+  },
+  "dependencies": {
+    "@koa/router": "^15.7.0",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "koa": "^2.16.4",
+    "koa-bodyparser": "^4.4.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "jest": "^30.5.2",
+    "vite": "^8.3.1"
+  }
+}
